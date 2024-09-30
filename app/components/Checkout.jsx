@@ -46,7 +46,7 @@ const Checkout = () => {
             id="quantity"
             value={quantity}
             className="h-10 w-16 text-black border-transparent text-center"
-            onChange={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
           />
 
           <button

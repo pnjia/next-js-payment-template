@@ -20,6 +20,7 @@ export default function Home() {
             width={250}
             height={250}
             className="w-full object-cover"
+            priority
           />
           <div className="border border-gray-100 bg-white p-6">
             <h3 className="mt-4 text-lg font-medium text-gray-900">
