@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { product } from "../libs/product";
+import { Snap } from "midtrans-client";
 
 const Checkout = () => {
   const [quantity, setQuantity] = useState(1);
@@ -25,6 +26,7 @@ const Checkout = () => {
     });
     const requestData = await response.json();
     console.log({ requestData });
+    window.snap.pay(requestData.token);
   };
 
   const generatePaymentLink = async () => {

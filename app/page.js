@@ -8,6 +8,19 @@ import { useEffect } from "react";
 export default function Home() {
   useEffect(() => {
     // render midtrans snap token
+    const source = 'https://app.sandbox.midtrans.com/snap/snap.js'
+    const client_key = process.env.NEXT_PUBLIC_CLIENT
+    console.log({client_key})
+    const script = document.createElement('script')
+    script.src = source    
+    script.setAttribute('data-client-key', client_key)
+    script.async = true
+    document.body.appendChild(script)
+    
+    return () => {
+      document.body.removeChild(script)
+    }
+    
   }, []);
 
   return (
